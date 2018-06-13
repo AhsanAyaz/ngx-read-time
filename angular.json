@@ -116,6 +116,46 @@
           }
         }
       }
+    },
+    "ngx-read-time": {
+      "root": "projects/ngx-read-time",
+      "sourceRoot": "projects/ngx-read-time/src",
+      "projectType": "library",
+      "prefix": "nrt",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/ngx-read-time/tsconfig.lib.json",
+            "project": "projects/ngx-read-time/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/ngx-read-time/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ngx-read-time/src/test.ts",
+            "tsConfig": "projects/ngx-read-time/tsconfig.spec.json",
+            "karmaConfig": "projects/ngx-read-time/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ngx-read-time/tsconfig.lib.json",
+              "projects/ngx-read-time/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "ngx-read-time-demo"

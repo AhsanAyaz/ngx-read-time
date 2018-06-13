@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ReadTimeOptions } from 'ngx-read-time';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  rtConfig: ReadTimeOptions = {
+    wordsPerMinute: 250
+  };
+  readTime: string;
 }
