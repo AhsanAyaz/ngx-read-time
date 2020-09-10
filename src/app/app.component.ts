@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ReadTimeOptions } from 'ngx-read-time';
+import { ReadTimeOptions } from '../../projects/ngx-read-time/src/public_api';
 
 @Component({
   selector: 'app-root',
