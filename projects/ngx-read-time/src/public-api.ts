@@ -4,5 +4,6 @@
 
 export * from './lib/ngx-read-time.service';
 export * from './lib/ngx-read-time.directive';
-export * from './lib/ngx-read-time-options';
 export * from './lib/ngx-read-time.module';
+export * from './lib/constants';
+export * from './lib/interfaces';

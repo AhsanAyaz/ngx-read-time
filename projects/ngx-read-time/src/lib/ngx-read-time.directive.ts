@@ -1,16 +1,18 @@
 import { Directive, Input, OnInit, ElementRef, EventEmitter, Output } from '@angular/core';
-import { ReadTimeOptions } from './ngx-read-time-options';
+import { ReadTimeConfig } from './interfaces';
 import { NgxReadTimeService } from './ngx-read-time.service';
+import { TimeUnit } from './constants';
 
 @Directive({
   selector: '[nrtReadTime]'
 })
 export class ReadTimeDirective implements OnInit {
   @Input() targetContainer = null;
-  @Input() options: ReadTimeOptions = {
-    wordsPerMinute: 200
+  @Input() options: ReadTimeConfig = {
+    wordsPerMinute: 200,
+    timeUnit: TimeUnit.MINUTES
   };
-  @Output() timeCalculated = new EventEmitter();
+  @Output() timeCalculated = new EventEmitter<{minutes: string}>();
   containerEl;
   constructor(
     private el: ElementRef,

@@ -1,8 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { NgxReadTimeModule } from '../../projects/ngx-read-time/src/public_api';
 
 import { AppComponent } from './app.component';
+import { NgxReadTimeModule } from 'projects/ngx-read-time/src/public-api';
 
 @NgModule({
   declarations: [
