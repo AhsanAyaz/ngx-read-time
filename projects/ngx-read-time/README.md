@@ -1,25 +1,34 @@
-# MyLib
+# NgxReadTime
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.12.
+## Usage
 
-## Code scaffolding
+```bash
+npm i --save ngx-read-time
+#OR
+yarn add -S ngx-read-time
+```
 
-Run `ng generate component component-name --project ngx-read-time` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project ngx-read-time`.
+Add the module into your app.module.ts
+```typescript
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
 
-> Note: Don't forget to add `--project ngx-read-time` or else it will be added to the default project in your `angular.json` file.
+import { AppComponent } from './app.component';
+import { NgxReadTimeModule } from 'projects/ngx-read-time/src/public-api';
 
-## Build
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+    NgxReadTimeModule // <---- here
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
 
-Run `ng build ngx-read-time` to build the project. The build artifacts will be stored in the `dist/` directory.
+```
 
-## Publishing
-
-After building your library with `ng build ngx-read-time`, go to the dist folder `cd dist/ngx-read-time` and run `npm publish`.
-
-## Running unit tests
-
-Run `ng test ngx-read-time` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+See the [demo project](https://github.com/AhsanAyaz/ngx-read-time/blob/master/projects/demo/src/app/app.component.html) for an example.
