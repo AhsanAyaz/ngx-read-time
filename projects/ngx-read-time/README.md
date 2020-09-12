@@ -5,7 +5,7 @@
 ```bash
 npm i --save ngx-read-time
 #OR
-yarn add -S ngx-read-time
+yarn add ngx-read-time -S
 ```
 
 Add the module into your app.module.ts

@@ -5869,6 +5869,13 @@ ngx-device-detector@^2.0.0:
   dependencies:
     tslib "^2.0.0"
 
+ngx-read-time@0.0.2:
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/ngx-read-time/-/ngx-read-time-0.0.2.tgz#de8723bec4aebc3e993a39a9a959b5343b7986ff"
+  integrity sha512-hT/CG5QsSIVic+GJG7mnSja5NAJqe+cMcrjMEmOMVcB5Fg57jSLx6MJwn+BrdmnGO8505TnrYMiVTX7pc7xArg==
+  dependencies:
+    tslib "^2.0.0"
+
 nice-try@^1.0.4:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/nice-try/-/nice-try-1.0.5.tgz#a3378a7696ce7d223e88fc9b764bd7ef1089e366"
