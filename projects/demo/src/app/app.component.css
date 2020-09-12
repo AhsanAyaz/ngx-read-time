@@ -1,0 +1,9 @@
+.app-container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.app-container article {
+  background-color: rgb(236, 240, 240);
+  padding: 20px 30px;
+}

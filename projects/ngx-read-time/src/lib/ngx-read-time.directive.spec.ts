@@ -1,12 +1,12 @@
 import { ReadTimeDirective } from './ngx-read-time.directive';
-import { ReadTimeOptions } from './ngx-read-time-options';
+import { ReadTimeConfig } from './interfaces';
 
 describe('ReadTimeDirective', () => {
   it('should create an instance', () => {
     const directive = new ReadTimeDirective(
       {nativeElement: null},
       {
-        calculateReadTime: (str: string, options: ReadTimeOptions) => ({minutes: ''}),
+        calculateReadTime: (str: string, options: ReadTimeConfig) => ({minutes: ''}),
         timeToString: (time: string) => ''
       }
     );
