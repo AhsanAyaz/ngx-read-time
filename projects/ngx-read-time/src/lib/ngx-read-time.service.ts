@@ -17,7 +17,7 @@ export class NgxReadTimeService {
     };
   }
 
-  timeToString(amount, unit) {
+  timeToString(amount: number, unit: TimeUnit) {
     if (unit === TimeUnit.MINUTES) {
       if (amount < 1) {
         return '< 1 minute';
