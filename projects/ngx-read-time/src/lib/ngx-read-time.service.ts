@@ -21,7 +21,7 @@ export class NgxReadTimeService {
     if (unit === TimeUnit.MINUTES) {
       if (amount < 1) {
         return '< 1 minute';
-      } else if (amount === 1) {
+      } else if (amount >= 1 && amount <= 2) {
         return '1 minute';
       }
     }
