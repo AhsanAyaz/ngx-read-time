@@ -1,0 +1,20 @@
+name: Build and Deploy
+on:
+  push:
+    branches:
+      - master
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Deploy demo
+        uses: AhsanAyaz/angular-deploy-gh-pages-actions@v1.3.1
+        with:
+          github_access_token: ${{ secrets.ACCESS_TOKEN }}
+          build_configuration: production
+          base_href: /ngx-read-time-ws/
+          deploy_branch: gh-pages
+          angular_dist_build_folder: projects/demo/dist/demo
+          angular_project_dir: projects/demo
