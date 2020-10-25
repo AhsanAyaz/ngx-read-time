@@ -2,6 +2,73 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.0.
 
+# Installation
+
+To install this library, run:
+`npm install ngx-read-time --save`
+
+In your component where you want to use:
+
+```
+import { Component } from '@angular/core';
+import { ReadTimeConfig, TimeUnit } from 'projects/ngx-read-time/src/public-api';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent {
+  title = 'demo';
+  readTime: string;
+  rtConfig: ReadTimeConfig = {
+    wordsPerMinute: 250,
+    timeUnit: TimeUnit.MINUTES
+  }
+}
+
+```
+
+In your HTML file:
+
+```
+<article nrtReadTime [options]="rtConfig" (timeCalculated)="readTime = $event.minutes">
+    <h1>Understanding Discriminated Unions in Typescript
+      <span>
+        <a href="https://dev.to/ahsanayaz/understanding-discriminated-unions-in-typescript-5cd">
+          (Source)
+        </a>
+      </span>
+    </h1>
+
+    // Here will the description of the article
+  </article>
+```
+
+Also add `NgxReadTimeModule` Module in your AppModule or the Module in which we are using this library.
+
+```
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+
+import { AppComponent } from './app.component';
+import { NgxReadTimeModule } from 'ngx-read-time';
+
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+    NgxReadTimeModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+
+```
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
