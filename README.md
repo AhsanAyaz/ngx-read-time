@@ -11,7 +11,7 @@ In your component where you want to use:
 
 ```
 import { Component } from '@angular/core';
-import { ReadTimeConfig, TimeUnit } from 'projects/ngx-read-time/src/public-api';
+import { ReadTimeConfig, TimeUnit } from 'ngx-read-time';
 
 @Component({
   selector: 'app-root',
@@ -45,7 +45,7 @@ In your HTML file:
   </article>
 ```
 
-Also add `NgxReadTimeModule` Module in your AppModule or the Module in which we are using this library.
+Also add `NgxReadTimeModule` Module in your AppModule or the Module in which you are using this library.
 
 ```
 import { BrowserModule } from '@angular/platform-browser';
