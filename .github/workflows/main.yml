@@ -10,10 +10,10 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Deploy demo
-        uses: AhsanAyaz/angular-deploy-gh-pages-actions@v1.3.1
+        uses: AhsanAyaz/angular-deploy-gh-pages-actions@v1.3.2
         with:
           github_access_token: ${{ secrets.ACCESS_TOKEN }}
           base_href: /ngx-read-time/
           deploy_branch: gh-pages
-          angular_dist_build_folder: projects/demo/dist/demo
-          angular_project_dir: projects/demo
+          angular_dist_build_folder: dist/demo
+          project_name: demo
