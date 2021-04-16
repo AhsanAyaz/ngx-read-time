@@ -13,7 +13,6 @@ jobs:
         uses: AhsanAyaz/angular-deploy-gh-pages-actions@v1.3.1
         with:
           github_access_token: ${{ secrets.ACCESS_TOKEN }}
-          build_configuration: production
           base_href: /ngx-read-time/
           deploy_branch: gh-pages
           angular_dist_build_folder: projects/demo/dist/demo
