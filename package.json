@@ -9,7 +9,12 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "build:lib": "ng build ngx-read-time --prod",
-    "release": "npm publish dist/ngx-read-time"
+    "release": "npm publish dist/ngx-read-time",
+    "docs": "npm run docs:build",
+    "docs:build": "compodoc -p --tsconfig ./projects/ngx-read-time/tsconfig.lib.json -n ./projects/ngx-read-time -d docs --hideGenerator --theme material",
+    "docs:serve": "npm run docs:build -- -s",
+    "docs:watch": "npm run docs:build -- -s -w",
+    "copy:demo:ci": "cp -R dist/demo ./docs/demo"
   },
   "private": true,
   "dependencies": {
