@@ -12,5 +12,5 @@ export class AppComponent {
   rtConfig: ReadTimeConfig = {
     wordsPerMinute: 250,
     timeUnit: TimeUnit.MINUTES
-  }
+  };
 }
