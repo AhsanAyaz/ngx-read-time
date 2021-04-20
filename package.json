@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "build:ci": "ng build --prod --base-href=/ngx-read-time/demo/",
+    "build:ci": "ng build demo --prod --base-href=/ngx-read-time/demo/",
     "build:lib": "ng build ngx-read-time --prod",
     "release": "npm publish dist/ngx-read-time",
     "docs": "npm run docs:build",
