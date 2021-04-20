@@ -7,11 +7,26 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
-      - uses: actions/checkout@v2
-      - name: Deploy demo
-        uses: AhsanAyaz/angular-deploy-gh-pages-actions@v1.3.2
+      - uses: actions/checkout@v1
+      - name: Use Node.js 12.8
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.8
+      - name: Install dependencies
+        run: npm install
+      - name: Lint
+        run: npm run lint
+      - name: Build Demo
+        run: npm run build:ci
+      - name: Test
+        run: npm run test:lib
+      - name: Docs
+        run: npm run docs:build
+      - name: Copy Files
+        run: npm run copy:demo:ci
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
           github_access_token: ${{ secrets.ACCESS_TOKEN }}
           base_href: /ngx-read-time/
