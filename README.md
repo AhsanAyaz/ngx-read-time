@@ -14,7 +14,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 To install this library, run:
 ```bash
-`npm install ngx-read-time --save`
+npm install ngx-read-time --save
 ```
 
 In your component where you want to use:
@@ -57,7 +57,7 @@ In your HTML file:
 
 Also add `NgxReadTimeModule` Module in your AppModule or the Module in which you are using this library.
 
-``` typescript
+```typescript
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
