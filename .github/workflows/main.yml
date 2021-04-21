@@ -27,6 +27,7 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          base_href: /ngx-read-time/
           BASE_BRANCH: master
           BRANCH: gh-pages
           FOLDER: dist/demo
