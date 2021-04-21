@@ -2,14 +2,24 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.0.
 
-# Installation
+## Demo
+
+[https://ahsanayaz.github.io/ngx-read-time/demo](https://ahsanayaz.github.io/ngx-read-time/demo)
+
+## Docs
+
+[https://ahsanayaz.github.io/ngx-read-time](https://ahsanayaz.github.io/ngx-read-time)
+
+## Installation
 
 To install this library, run:
+```bash
 `npm install ngx-read-time --save`
+```
 
 In your component where you want to use:
 
-```
+```typescript
 import { Component } from '@angular/core';
 import { ReadTimeConfig, TimeUnit } from 'ngx-read-time';
 
@@ -31,7 +41,7 @@ export class AppComponent {
 
 In your HTML file:
 
-```
+```html
 <article nrtReadTime [options]="rtConfig" (timeCalculated)="readTime = $event.minutes">
     <h1>Understanding Discriminated Unions in Typescript
       <span>
@@ -43,11 +53,11 @@ In your HTML file:
 
     // Here will the description of the article
   </article>
-```
+``` 
 
 Also add `NgxReadTimeModule` Module in your AppModule or the Module in which you are using this library.
 
-```
+``` typescript
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
