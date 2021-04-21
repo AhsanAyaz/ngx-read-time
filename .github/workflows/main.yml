@@ -26,8 +26,8 @@ jobs:
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
-          github_access_token: ${{ secrets.ACCESS_TOKEN }}
-          base_href: /ngx-read-time/
-          deploy_branch: gh-pages
-          angular_dist_build_folder: dist/demo
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          BASE_BRANCH: master
+          BRANCH: gh-pages
+          FOLDER: dist/demo
           project_name: demo
