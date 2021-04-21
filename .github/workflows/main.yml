@@ -19,8 +19,6 @@ jobs:
         run: npm run lint
       - name: Build Demo
         run: npm run build:ci
-      - name: Test
-        run: npm run test:lib
       - name: Docs
         run: npm run docs:build
       - name: Copy Files
