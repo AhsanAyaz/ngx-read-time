@@ -1,0 +1,274 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>./projects/ngx-read-time</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/material.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">./projects/ngx-read-time</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content miscellaneous-variables">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   
+
+<ol class="breadcrumb">
+  <li>Miscellaneous</li>
+  <li>Variables</li>
+</ol>
+
+<section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <ul class="index-list">
+                        <li>
+                            <a href="#demoTextWithMarkup" title="projects/ngx-read-time/src/lib/sample-texts.ts"><b>demoTextWithMarkup</b>&nbsp;&nbsp;&nbsp;(projects/.../sample-texts.ts)</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+    <h3>projects/ngx-read-time/src/lib/sample-texts.ts</h3>
+    <section>
+    <h3></h3>        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="demoTextWithMarkup"></a>
+                        <span class="name">
+                            <b>
+                            demoTextWithMarkup</b>
+                            <a href="#demoTextWithMarkup"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>&#x60;
+&lt;h1&gt;Understanding Discriminated Unions in Typescript
+      &lt;span&gt;
+        &lt;a href&#x3D;&quot;https://dev.to/ahsanayaz/understanding-discriminated-unions-in-typescript-5cd&quot;&gt;
+          (Source)
+        &lt;/a&gt;
+      &lt;/span&gt;
+    &lt;/h1&gt;
+    As you may already know, Typescript is a superset of Javascript; and is simply awesome. There are numerous features we love and hear about Typescript every day. For example, we could have a look at interfaces, enums, unions, intersections, type guards and much more.
+
+I this article, we&#x27;re going to focus on Discriminated Unions. We&#x27;ll look into what they are and by the end of the article, you&#x27;ll have a good understanding of where you can use these.
+
+
+
+
+  &lt;h3&gt;Discriminated Unions&lt;/h3&gt;
+
+
+Discriminated Unions, also called algebraic data types or tagged unions are a combination of three things:
+
+
+&lt;ul&gt;
+  &lt;li&gt;The discriminant&lt;/li&gt;
+  &lt;li&gt;The union&lt;/li&gt;
+  &lt;li&gt;Type guards&lt;/li&gt;
+&lt;/ul&gt;
+
+
+Let&#x27;s understand each of the above, one by one with examples.
+
+
+
+
+  &lt;h4&gt;The Discriminant&lt;/h4&gt;
+
+
+The discriminant is a singleton type property which is common in each of the elements of the union. You can read more about Typescript Singleton Types in this article.
+
+See the example below:
+
+
+You can see that the vType property in the interfaces is the discriminant or the tag. The other properties are specific to the corresponding interfaces.
+
+
+
+
+  &lt;h4&gt;The Union&lt;/h4&gt;
+
+
+The union of the interfaces can be simply created as follows:
+
+
+We can now use this union (type) in our code where we can have more than one kind of vehicles expected in a variable.
+
+
+
+
+  &lt;h4&gt;The Type Guards&lt;/h4&gt;
+
+
+Consider the following example based on the interfaces we defined above:
+
+
+The above code will cause the typescript compiler to throw the following error:
+
+
+Property &#x27;capacity&#x27; does not exist on type &#x27;Vehicle&#x27;.
+  Property &#x27;capacity&#x27; does not exist on type &#x27;IMotorcycle&#x27;.
+
+
+
+
+The reason is that the property capacity does not exist on the interface IMotorCycle. Well, actually it doesn&#x27;t exist in ICar too but it already breaks checking IMotorCycle, which is declared before ICar, so it doesn&#x27;t reach checking ICar.
+
+Well, how do we fix this? Using type guards of course. See an example below:
+
+
+Using the switch &amp; case operators fix the problem for us by serving as type guards, making sure we&#x27;re accessing the right properties of the vehicle that we&#x27;ve got in the evaluatePrice method.
+
+If you&#x27;re using an editor like VSCode, you&#x27;ll notice that before using these type guards, the IntelliSense may only have shown you vType as a property when you typed vehicle.. But if you type vehicle. inside any of the case statements now, you&#x27;ll see that now, the appropriate properties by the IntelliSense are shown from the appropriate interfaces.
+
+
+
+
+  &lt;h4&gt;Checking Exhaustiveness&lt;/h4&gt;
+
+
+What if we wanted to introduce a new type/interface to the union Vehicle? You might think that the evaluatePrice function doesn&#x27;t have the case handled for that. And that&#x27;s accurate. But we need the compiler to let us know at build time (or using tslint etc) that we need to cover all variants of the type Vehicle. This is called Exhaustiveness Checking. One of the ways to ensure we&#x27;re covering all variants of a union is to use never, which the typescript compiler uses for exhaustiveness.
+
+Assume we added a new type IBicycle to the Vehicle union as below:
+
+
+We&#x27;ll be able to use never for the exhaustiveness check as follows:
+
+
+The above should show an error in the editor (using lint tools) or on compile time as below:
+
+
+Type &#x27;IBicycle&#x27; is not assignable to type &#x27;never&#x27;.
+
+
+
+
+The above shows we need to handle IBicycle as well. Once we add the case for IBicycle in the evaluatePrice method as below, the error should go away.
+
+
+You can find a working example here on Stackblitz.
+
+
+
+
+  &lt;h3&gt;Conclusion&lt;/h3&gt;
+
+
+Discriminated unions are pretty powerful combined with Typescript&#x27;s ability to differentiate the types based on the discriminants/tags. When used right, this can bring significant readability to the code and is great when it comes to writing reliable dynamic types with functions.
+
+
+
+
+  Further Reading
+
+
+Exhaustive Type Checking with TypeScript!
+Advanced Types - Typescript
+CodingBlast Typescript series
+
+If you learned something new from this article, don&#x27;t forget to show this to your friends and workmates. Happy coding!
+&#x60;</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'miscellaneous-variables';
+            var COMPODOC_CURRENT_PAGE_URL = 'variables.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
