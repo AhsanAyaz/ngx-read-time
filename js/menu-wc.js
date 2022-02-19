@@ -1,6 +1,5 @@
 'use strict';
 
-
 customElements.define('compodoc-menu', class extends HTMLElement {
     constructor() {
         super();
@@ -52,19 +51,18 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                         </a>
                         <ul class="links collapse " ${ isNormalMode ? 'id="modules-links"' : 'id="xs-modules-links"' }>
                             <li class="link">
-                                <a href="modules/NgxReadTimeModule.html" data-type="entity-link">NgxReadTimeModule</a>
+                                <a href="modules/NgxReadTimeModule.html" data-type="entity-link" >NgxReadTimeModule</a>
                                 <li class="chapter inner">
                                     <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                        'data-target="#directives-links-module-NgxReadTimeModule-58ddb2ee26c2d095e17079ea2aa055fa"' : 'data-target="#xs-directives-links-module-NgxReadTimeModule-58ddb2ee26c2d095e17079ea2aa055fa"' }>
+                                        'data-target="#directives-links-module-NgxReadTimeModule-f221cce09d3c237328d1615f916f4f5ccfe12c57a6dc27545f8166c5ba587cd47ba0692df9476094c9afca517338cc30f137c076e15f4259eca1b8ac3caf8faa"' : 'data-target="#xs-directives-links-module-NgxReadTimeModule-f221cce09d3c237328d1615f916f4f5ccfe12c57a6dc27545f8166c5ba587cd47ba0692df9476094c9afca517338cc30f137c076e15f4259eca1b8ac3caf8faa"' }>
                                         <span class="icon ion-md-code-working"></span>
                                         <span>Directives</span>
                                         <span class="icon ion-ios-arrow-down"></span>
                                     </div>
-                                    <ul class="links collapse" ${ isNormalMode ? 'id="directives-links-module-NgxReadTimeModule-58ddb2ee26c2d095e17079ea2aa055fa"' :
-                                        'id="xs-directives-links-module-NgxReadTimeModule-58ddb2ee26c2d095e17079ea2aa055fa"' }>
+                                    <ul class="links collapse" ${ isNormalMode ? 'id="directives-links-module-NgxReadTimeModule-f221cce09d3c237328d1615f916f4f5ccfe12c57a6dc27545f8166c5ba587cd47ba0692df9476094c9afca517338cc30f137c076e15f4259eca1b8ac3caf8faa"' :
+                                        'id="xs-directives-links-module-NgxReadTimeModule-f221cce09d3c237328d1615f916f4f5ccfe12c57a6dc27545f8166c5ba587cd47ba0692df9476094c9afca517338cc30f137c076e15f4259eca1b8ac3caf8faa"' }>
                                         <li class="link">
-                                            <a href="directives/ReadTimeDirective.html"
-                                                data-type="entity-link" data-context="sub-entity" data-context-id="modules">ReadTimeDirective</a>
+                                            <a href="directives/ReadTimeDirective.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >ReadTimeDirective</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -80,7 +78,7 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             </div>
                             <ul class="links collapse " ${ isNormalMode ? 'id="injectables-links"' : 'id="xs-injectables-links"' }>
                                 <li class="link">
-                                    <a href="injectables/NgxReadTimeService.html" data-type="entity-link">NgxReadTimeService</a>
+                                    <a href="injectables/NgxReadTimeService.html" data-type="entity-link" >NgxReadTimeService</a>
                                 </li>
                             </ul>
                         </li>
@@ -93,7 +91,7 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                         </div>
                         <ul class="links collapse " ${ isNormalMode ? ' id="interfaces-links"' : 'id="xs-interfaces-links"' }>
                             <li class="link">
-                                <a href="interfaces/ReadTimeConfig.html" data-type="entity-link">ReadTimeConfig</a>
+                                <a href="interfaces/ReadTimeConfig.html" data-type="entity-link" >ReadTimeConfig</a>
                             </li>
                         </ul>
                     </li>
